@@ -10,14 +10,6 @@ const app = express();
 app.get("/api", manageTimestamp);
 app.get("/api/:date", manageTimestamp);
 
-app.get("/", (req: Request, res: Response) => {
-    res.sendFile(__dirname + "/src/index.html", (err: any, data: any) => {
-        if (err) {
-            console.log(err);
-        }
-    })
-});
-
 app.listen(PORT, () => {
     console.log(`Server is listening on port: ${PORT}`);
 });
